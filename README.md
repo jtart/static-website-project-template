@@ -20,6 +20,6 @@ Does what it says on the tin.
 
 ## Production
 
-1. Run `grunt prod`
+1. Run `grunt dist`
 2. ??
 3. Profit (in the `dist/` directory)
