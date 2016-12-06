@@ -15,11 +15,11 @@ Does what it says on the tin.
 ## Development
 
 1. Run `grunt dev`
-2. ??
+2. ?? (in `src/`)
 3. Profit
 
 ## Production
 
 1. Run `grunt dist`
 2. ??
-3. Profit (in the `dist/` directory)
+3. Profit (in `dist/`)
