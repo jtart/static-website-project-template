@@ -1,5 +1,14 @@
 module.exports = function (grunt) {
     grunt.initConfig({
+        clean: {
+            component: [
+                'dist/*',
+                'src/assets/styles/*'
+            ],
+            options: {
+                force: true
+            }
+        },
         watch: {
             css: {
                 files: ['src/assets/sass/*.scss'],
@@ -80,13 +89,14 @@ module.exports = function (grunt) {
     });
 
     grunt.loadNpmTasks('grunt-contrib-cssmin');
+    grunt.loadNpmTasks('grunt-contrib-clean');
     grunt.loadNpmTasks('grunt-contrib-imagemin');
     grunt.loadNpmTasks('grunt-contrib-sass');
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-contrib-htmlmin');
     grunt.loadNpmTasks('grunt-uncss');
 
-    grunt.registerTask('dev', ['sass:dev', 'watch']);
-    grunt.registerTask('dist', ['sass:dist', 'uncss:dist', 'cssmin:dist', 'imagemin:dist', 'htmlmin:dist']);
+    grunt.registerTask('dev', ['clean', 'sass:dev', 'watch']);
+    grunt.registerTask('dist', ['clean', 'sass:dist', 'uncss:dist', 'cssmin:dist', 'imagemin:dist', 'htmlmin:dist']);
     grunt.registerTask('default', ['dist']);
 };
