@@ -2,7 +2,7 @@ module.exports = function (grunt) {
     grunt.initConfig({
         watch: {
             css: {
-                files: ['assets/sass/*.scss'],
+                files: ['src/assets/sass/*.scss'],
                 tasks: ['sass:dev']
             }
         },
@@ -15,9 +15,9 @@ module.exports = function (grunt) {
                 },
                 files: [{
                     expand: true,
-                    cwd: 'assets/sass/',
+                    cwd: 'src/assets/sass/',
                     src: ['**/*.scss'],
-                    dest: 'src/styles/',
+                    dest: 'src/assets/styles/',
                     ext: '.css'
                 }]
             },
@@ -29,9 +29,9 @@ module.exports = function (grunt) {
                 },
                 files: [{
                     expand: true,
-                    cwd: 'assets/sass/',
+                    cwd: 'src/assets/sass/',
                     src: ['**/*.scss'],
-                    dest: 'src/styles/',
+                    dest: 'src/assets/styles/',
                     ext: '.css'
                 }]
             }
@@ -39,14 +39,14 @@ module.exports = function (grunt) {
         uncss: {
             dist: {
                 files: [
-                    { src: 'src/index.html', dest: 'src/styles/styles.css' }
+                    { src: 'src/index.html', dest: 'src/assets/styles/main.css' }
                 ]
             }
         },
         cssmin: {
             dist: {
                 files: [
-                    { src: 'src/styles/styles.css', dest: 'dist/styles/styles.css' }
+                    { src: 'src/assets/styles/main.css', dest: 'dist/assets/styles/main.css' }
                 ]
             }
         },
@@ -57,9 +57,9 @@ module.exports = function (grunt) {
                 },
                 files: [{
                     expand: true,
-                    cwd: 'src/images',
+                    cwd: 'src/assets/images',
                     src: ['**/*.{png,jpg,jpeg,gif}'],
-                    dest: 'dist/images'
+                    dest: 'dist/assets/images'
               }]
            }
         },
