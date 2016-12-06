@@ -9,6 +9,8 @@ Does what it says on the tin.
 ## Setup
 
 1. Run `npm install`
+2. ??
+3. Profit
 
 ## Development
 
